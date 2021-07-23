@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "AddWithoutModelBinding";
+}
+
+@if (ViewData["addedWOBinding"] == null)
+{
+    <h1>AddWithoutModelBinding</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" name="first-name" class="form-control" id="firstName">
+            <small id="firstNameHelp" class="form-text text-muted">Enter your legal first name.</small>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="last-name" class="form-control" id="lastName">
+            <small id="lastNameHelp" class="form-text text-muted">Enter your legal last name.</small>
+        </div>
+        <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="text" name="dob" class="form-control" id="dateOfBirth">
+            <small id="dobHelp" class="form-text text-muted">Enter the date you were born mm/dd/yyyy</small>
+        </div>
+        <div class="form-group">
+            <label for="customerEmail">Email</label>
+            <input type="text" name="email" class="form-control" id="customerEmail">
+            <small id="emailHelp" class="form-text text-muted">Enter a valid email.</small>
+        </div>
+        <button type="submit" class="btn btn-info">Submit Customer</button>
+    </form>
+}
+else
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>@ViewData["addedWOBinding"]</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}   

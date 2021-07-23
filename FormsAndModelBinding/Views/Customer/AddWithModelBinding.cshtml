@@ -1,0 +1,46 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "AddWithModelBinding";
+}
+
+<h1>AddWithModelBinding</h1>
+
+@if (ViewData["Message"] == null)
+{
+<form method="post">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <small id="firstNameHelp" class="form-text text-muted">Enter your legal first name.</small>
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <small id="lastNameHelp" class="form-text text-muted">Enter your legal last name.</small>
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" class="form-control" />
+        <small id="dobHelp" class="form-text text-muted">Enter the date you were born mm/dd/yyyy</small>
+        <span asp-validation-for="DateOfBirth"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <small id="emailHelp" class="form-text text-muted">Enter a valid email.</small>
+        <span asp-validation-for="Email"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Submit Customer</button>
+</form>
+}
+else
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>@ViewData["Message"]</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
