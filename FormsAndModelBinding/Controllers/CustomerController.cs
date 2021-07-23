@@ -48,6 +48,9 @@ namespace FormsAndModelBinding.Controllers
             {
                 ViewData["Message"] = $"{c.FirstName} {c.LastName} with the email {c.Email} has been registered.";
             }
+
+            //add to database
+
             return View();
         }
     }
